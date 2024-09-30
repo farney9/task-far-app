@@ -1,0 +1,44 @@
+.task_list_wrapper
+  @apply bg-background-200 p-8 w-fit mt-8 mx-auto rounded-lg
+
+.title
+  @apply text-3xl font-bold text-center mb-4
+
+.new_task
+  @apply relative flex items-center rounded-lg overflow-hidden
+
+  & input
+  @apply w-64 p-2 rounded-lg bg-background-300
+
+.new_task button
+  @apply absolute right-0 bg-background-400 text-lg font-black h-full px-2
+
+.filters
+  @apply flex justify-end gap-2 my-2
+
+  & button
+  @apply px-2 rounded-lg bg-background-300
+
+.filters button.active
+  @apply bg-background-400
+
+.task_list
+  @apply flex flex-col gap-2
+
+.task_list li
+  @apply flex px-4 py-2 bg-background-300 rounded-lg items-center gap-2
+
+.task_list li.task_item label
+  @apply flex-1
+
+.task_list li.task_item:hover button
+  @apply block
+
+.task_list li.task_item button
+  @apply hidden text-xs
+
+.task_list li.task_item input[type="checkbox"]
+  @apply w-4 h-4 cursor-pointer
+
+.task_list li.task_item_editing input[type="text"]
+  @apply w-full rounded-lg bg-transparent px-2 outline-none
