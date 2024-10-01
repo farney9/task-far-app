@@ -1,0 +1,15 @@
+<div *ngFor="let person of personsList.controls; let i = index" [formGroup]="getPersonFormGroup(i)" class="person-form">
+  <div class="person-details">
+    <input formControlName="fullName" placeholder="Nombre completo" class="input-field">
+    <input formControlName="age" type="number" placeholder="Edad" class="input-field">
+  </div>
+  <div formArrayName="skills" class="skills-list">
+    <div *ngFor="let skill of getSkillsFormArray(i).controls; let j = index" class="skill-item">
+      <input [formControlName]="j" placeholder="Habilidad" class="input-field">
+      <button type="button" (click)="removeSkill(i, j)" class="remove-skill-btn">Eliminar Habilidad</button>
+    </div>
+    <button type="button" (click)="addSkill(i)" class="add-skill-btn">Añadir Habilidad</button>
+  </div>
+  <button type="button" (click)="removePerson(i)" class="remove-person-btn">Eliminar Persona</button>
+</div>
+<button type="button" (click)="addPerson()" class="add-person-btn">Añadir Persona</button>
